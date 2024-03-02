@@ -1,0 +1,150 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "id": "1",
+      "firstName": "Nikhil",
+      "lastName": "Kurmi",
+      "email": "Nikhil.kurmi@intern.com",
+      "dob": "2000-10-25T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "TCS",
+      "experience": 2,
+      "package": 3
+    },
+    {
+      "firstName": "Shruti",
+      "lastName": "patel",
+      "email": "shti@gmail.com",
+      "dob": "2024-03-26T18:30:00.000Z",
+      "gender": "female",
+      "education": "Diploma",
+      "company": "Deloitte",
+      "experience": 1,
+      "package": 3,
+      "is_terms_policy": true,
+      "id": "2"
+    },
+    {
+      "firstName": "Karan",
+      "lastName": "kundra",
+      "email": "kk@gmail.com",
+      "dob": "2024-02-26T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "Amazon",
+      "experience": 2,
+      "package": 6,
+      "is_terms_policy": true,
+      "id": "3"
+    },
+    {
+      "firstName": "Samriddhi",
+      "lastName": "Dhangher",
+      "email": "sam@gmail.com",
+      "dob": "2024-03-26T18:30:00.000Z",
+      "gender": "female",
+      "education": "Post Graduate",
+      "company": "facebook",
+      "experience": 1,
+      "package": 4,
+      "is_terms_policy": true,
+      "id": "4"
+    },
+    {
+      "firstName": "Neel",
+      "lastName": "Kori",
+      "email": "neelk@gmail.com",
+      "dob": "2024-03-02T18:30:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "Microsoft",
+      "experience": 3,
+      "package": 5,
+      "is_terms_policy": true,
+      "id": "5"
+    },
+    {
+      "firstName": "Sourabh",
+      "lastName": "kumar",
+      "email": "sou@gmail.com",
+      "dob": "2024-03-26T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "Miracle",
+      "experience": 3,
+      "package": 5,
+      "is_terms_policy": true,
+      "id": "6"
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Patel",
+      "email": "Rahul@gmail.com",
+      "dob": "2024-03-14T18:30:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "cross",
+      "experience": 1,
+      "package": 3,
+      "is_terms_policy": true,
+      "id": "8"
+    },
+    {
+      "firstName": "Neha",
+      "lastName": "Soni",
+      "email": "nehaa@gmail.com",
+      "dob": "2024-03-13T18:30:00.000Z",
+      "gender": "female",
+      "education": "Graduate",
+      "company": "ms",
+      "experience": 2,
+      "package": 5,
+      "is_terms_policy": true,
+      "id": "9"
+    },
+    {
+      "firstName": "Aditya",
+      "lastName": "patel",
+      "email": "aadi@gmail.com",
+      "dob": "2024-03-28T18:30:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "IT park",
+      "experience": 2,
+      "package": 7,
+      "is_terms_policy": true,
+      "id": "10"
+    },
+    {
+      "id": "11",
+      "firstName": "Neelam",
+      "lastName": "kori",
+      "email": "neek@gmail.com",
+      "dob": "2024-03-06T18:30:00.000Z",
+      "gender": "female",
+      "education": "Post Graduate",
+      "company": "Miracle IT",
+      "experience": 1,
+      "package": 4,
+      "is_terms_policy": true
+    }
+  ]
+}
