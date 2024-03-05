@@ -145,6 +145,20 @@
       "experience": 1,
       "package": 4,
       "is_terms_policy": true
+    },
+    {
+      "id": "802a",
+      "file": "",
+      "firstName": "nikhil",
+      "lastName": "kurmi",
+      "email": "nikhil@gmail.com",
+      "dob": "2024-03-19T18:30:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "Wipro",
+      "experience": 1,
+      "package": 2,
+      "is_terms_policy": true
     }
   ]
 }

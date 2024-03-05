@@ -11,6 +11,7 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class EmpAddEditComponent implements OnInit {
   empForm: FormGroup;
+  
 
   education: string[] = [
     'Matric',
@@ -20,6 +21,7 @@ export class EmpAddEditComponent implements OnInit {
     'Post Graduate',
   ];
   terms: any;
+ 
 
   constructor(
     private _fb: FormBuilder,
@@ -57,6 +59,15 @@ export class EmpAddEditComponent implements OnInit {
     this.terms = evt.target.checked;
 }
 
+url="./assets/images/download (1).jpg"
+onselectFile(e:any){
+  if(e.target.files){
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload=(event:any)=>
+    this.url=event.target.result;
+  }
+}
   onFormSubmit() {
     if (this.empForm.valid) {
       if (this.data) {
