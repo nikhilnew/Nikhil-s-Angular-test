@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup,FormControl, ValidatorFn, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../core/core.service';
 import { EmployeeService } from '../services/employee.service';
@@ -31,21 +31,64 @@ export class EmpAddEditComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.empForm = this._fb.group({
+      file: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       dob: ['', Validators.required],
-      gender: ['', Validators.required],
-      education: ['', Validators.required],
-      company: ['', Validators.required],
+      gender: ['', [Validators.required,this.noRepeatingDigits(),this.containsConsecutiveZeros()]],
+      education: ['',Validators.required],
+      company: ['',Validators.required],
       experience: ['', Validators.required],
       package: ['', Validators.required],
-      is_terms_policy: [0, this.checkboxRequired()],
+      is_terms_policy: [0,this.checkboxRequired()],
     });
   }
 
+  Items = ['pizzz', 'Pasta', 'Maggie']
+
+  getcontrol(name: any): AbstractControl | null {
+    return this.empForm.get(name);
+  }
   ngOnInit(): void {
     this.empForm.patchValue(this.data);
+  }
+  /////////////////
+  
+  //////////////////////
+  
+  containsConsecutiveZeros(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value as string;
+      if (value && /000000/.test(value)) {
+        return { containsConsecutiveZeros: true };
+      }
+      return null;
+    };
+  }
+  noRepeatingDigits(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value as string;
+      if (value && value.length === 10) {
+        // Check for repeating digits
+        const repeatingDigits = /(.)\1{5,}/.test(value);
+        if (repeatingDigits) {
+          return { repeatingDigits: true };
+        }
+      }
+      return null;
+    };
+  }
+
+  keyPressNumbers(event: any) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    // Only Numbers 0-9
+    if ((charCode < 48 || charCode > 57)) {
+      event.preventDefault();
+      return false;
+    } else {
+      return true;
+    }
   }
 
   checkboxRequired(): ValidatorFn {
@@ -67,6 +110,14 @@ onselectFile(e:any){
     reader.onload=(event:any)=>
     this.url=event.target.result;
   }
+}
+ValidateAlpha(event: any) {
+  var keyCode = (event.which) ? event.which : event.keyCode
+
+  if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32)
+    return false;
+  return true;
+
 }
   onFormSubmit() {
     if (this.empForm.valid) {
@@ -95,4 +146,8 @@ onselectFile(e:any){
       }
     }
   }
+
+
+
+  ///////////////////
 }

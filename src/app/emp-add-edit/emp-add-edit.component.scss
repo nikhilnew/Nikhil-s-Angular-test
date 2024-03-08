@@ -10,11 +10,14 @@
   }
 }
 img{
-  border-radius: 60px;
+  border-radius: 15px;
 }
 .action {
   padding: 0px 25px 20px;
   button {
     flex: 1;
   }
+}
+.text-danger{
+  color: red;
 }
