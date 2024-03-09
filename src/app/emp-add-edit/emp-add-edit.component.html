@@ -408,17 +408,18 @@
          <mat-form-field class="example-chip-list">
   <mat-label>Favorite Fruits</mat-label>
   <mat-chip-grid #chipGrid aria-label="Enter fruits">
+
+    
     <mat-chip-row *ngFor="let fruit of fruits; let i = index"
-                  (removed)="remove(fruit)"
-                  [editable]="true"
-                  (edited)="edit(fruit, $event)"
-                  [aria-description]="'press enter to edit ' + fruit.name">
+              (removed)="remove(fruit)"
+              [editable]="true"
+              (edited)="edit(fruit, $event)">
       {{ fruit.name }}
       <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
         <mat-icon>cancel</mat-icon>
       </button>
     </mat-chip-row>
-    <input placeholder="New fruit..."
+    <input formControlName="package" placeholder="New fruit..."
            [matChipInputFor]="chipGrid"
            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
            [matChipInputAddOnBlur]="addOnBlur"
